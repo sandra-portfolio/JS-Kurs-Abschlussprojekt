@@ -1,0 +1,120 @@
+.kontroll-leiste {
+    max-width: 1100px;
+    margin: 40px auto 20px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Filter Links */
+.filter-links .filter-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-right: 15px;
+    cursor: pointer;
+    padding: 0 0 4px 0;
+    font-family: var(--font-sans);
+    transition: color 0.2s ease;
+}
+
+.filter-links .filter-btn:hover {
+    color: var(--text-main);
+}
+
+.filter-links .filter-btn.aktiv {
+    color: var(--text-main);
+    border-bottom: 2px solid var(--text-main);
+    font-weight: 600;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Der Pfeil im Button rotiert bei Klick */
+.toggle-btn .arrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+}
+
+/* Wenn geöffnet, dreht sich der Pfeil um */
+.toggle-btn.aktiv .arrow {
+    transform: rotate(180deg);
+}
+
+/* Der einklappbare Genre-Container */
+.genre-filter-container {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    /* Macht das Aufgleiten flüssig */
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+/* Diese Klasse steuern wir gleich mit JavaScript an */
+.genre-filter-container.offen {
+    max-height: 40px; /* Genug Platz für eine Zeile Text */
+    opacity: 1;
+    padding: 8px 0 4px 0; /* Gibt den Genres etwas Luft zum Atmen */
+}
+
+/* Die Genres als ultra-cleaner Text ohne Rahmen */
+.genre-filter-container .chip {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 2px 5px;
+    transition: color 0.2s ease;
+}
+
+.genre-filter-container .chip:hover,
+.genre-filter-container .chip.aktiv {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+/* Rechte Aktionen */
+.aktionen-rechts {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.sortier-select {
+    padding: 8px 12px;
+    border: 1px solid #E5E0D8;
+    border-radius: 4px;
+    background-color: white;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-add {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-add:hover {
+    background-color: #B26551; /* Etwas dunkleres Terracotta beim Hovern */
+}

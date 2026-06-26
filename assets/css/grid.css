@@ -1,0 +1,109 @@
+.buecher-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.buch-karte {
+    position: relative;
+    background-color: var(--bg-card);
+    border-radius: 6px;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert alles in der Karte */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-loeschen {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #555555;
+    background: transparent;
+    border: none;
+    border-radius: 50%; /* Macht ihn rund */
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.status-tag {
+    cursor: pointer;
+    border: none; /* Entfernt den hässlichen Standard-Button-Rahmen */
+    outline: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px; /* Setzt es elegant über das Cover */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.sterne span {
+    cursor: pointer; /* Macht auch die Sterne einzeln klickbar */
+}
+
+/* Farbe für gelesene Bücher (z.B. ein sanftes Salbeigrün) */
+.tag-gelesen {
+    background-color: #E6F4EA;
+    color: #137333;
+}
+
+/* Farbe für ungelesene Bücher (z.B. ein weiches Blau oder Grau) */
+.tag-ungelesen {
+    background-color: #E8F0FE;
+    color: #1A73E8;
+}
+
+.buch-cover {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.buch-karte h3 {
+    margin: 5px 0 2px 0;
+    font-size: 1.15rem;
+    color: var(--text-main);
+    font-weight: 600;
+    text-align: center;
+}
+
+.buch-karte .autor {
+    margin: 0 0 5px 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.buch-karte .genre {
+    margin: 0 0 12px 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.sterne {
+    color: var(--stars-empty);
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    cursor: default;
+}
+
+/* Wenn ein Stern aktiv ist (wird per JavaScript die Klasse .aktiv zugewiesen) */
+.sterne .aktiv {
+    color: var(--color-accent); /* Sterne leuchten im edlen Terracotta */
+}

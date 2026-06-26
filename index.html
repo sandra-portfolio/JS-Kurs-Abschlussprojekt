@@ -5,14 +5,92 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Datensammlung Bücher</title>
-		<style></style>
-			
-		<script>
-		    'use strict';
-		    
-		</script>
+		<link rel="stylesheet" href="./assets/css/style.css">
+
+		<script src="./assets/js/elements.js" defer></script>
+		<script src="./assets/js/funktionen.js" defer></script>
+		<script src="./assets/js/api.js" defer></script>
+		<script src="./assets/js/render.js" defer></script>
+		<script src="./assets/js/theme.js" defer></script>
+		<script src="./assets/js/events.js" defer></script>
+
+		<script src="./assets/js/main.js"></script>
+
 	</head>
 	<body>
-	    
+
+	<header class="navbar">
+		<div class="navbar-inhalt">
+			<h1>Meine Bibliothek</h1>
+
+			<div class="such-container">
+				<input type="text" class="such-input" placeholder="Suchen ...">
+			</div>
+
+			<div class="theme-switch-wrapper">
+				<span>Dark Mode</span>
+				<label class="toggle-switch">
+					<input type="checkbox" id="dark-mode-toggle">
+					<span class="slider"></span>
+				</label>
+			</div>
+		</div>
+	</header>
+
+	<section class="kontroll-leiste">
+
+		<div class="filter-group">
+			<div class="filter-links">
+				<button class="filter-btn aktiv" data-filter="alle">Alle</button>
+				<button class="filter-btn" data-filter="gelesen">Gelesen</button>
+				<button class="filter-btn" data-filter="ungelesen">Ungelesen</button>
+				<button class="filter-btn toggle-btn" id="genres-toggle-btn">Genres <span class="arrow">▼</span></button>
+			</div>
+
+			<div class="genre-filter-container" id="genre-container">
+				<button class="chip aktiv" data-filter="alle">Alle Genres</button>
+				<button class="chip" data-filter="Liebesroman">Liebesroman</button>
+				<button class="chip" data-filter="Thriller">Thriller</button>
+				<button class="chip" data-filter="Manga">Manga</button>
+				<button class="chip" data-filter="Fantasy">Fantasy</button>
+			</div>
+		</div>
+
+
+		<div class="aktionen-rechts">
+			<select class="sortier-select">
+				<option value="titel">Sortieren: Titel (A-Z)</option>
+				<option value="autor">Sortieren: Autor (A-Z)</option>
+				<option value="bewertung">Sortieren: Beste Bewertung</option>
+			</select>
+
+			<button class="btn-add">Buch hinzufügen</button>
+		</div>
+
+	</section>
+
+	<main class="buecher-grid"></main>
+
+	<div id="bewertung-modal" class="modal-overlay ausgeblendet">
+		<div class="modal-content">
+			<button class="modal-schliessen">✕</button>
+
+			<h2 id="modal-buch-titel">Buch bewerten</h2>
+			<p>Wie viele Sterne gibst du dem Buch?</p>
+
+			<div class="modal-sterne" data-gewaehlte-sterne="0">
+				<span class="modal-stern" data-wert="1">★</span>
+				<span class="modal-stern" data-wert="2">★</span>
+				<span class="modal-stern" data-wert="3">★</span>
+				<span class="modal-stern" data-wert="4">★</span>
+				<span class="modal-stern" data-wert="5">★</span>
+			</div>
+
+			<div class="modal-buttons">
+				<button class="btn-abbrechen">Abbrechen</button>
+				<button class="btn-speichern-bewertung">Bewertung speichern</button>
+			</div>
+		</div>
+	</div>
 	</body>
 </html>

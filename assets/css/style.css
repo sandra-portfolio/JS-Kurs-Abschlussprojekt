@@ -1,0 +1,7 @@
+/* styles.css */
+
+@import url('./variables.css');
+@import url('./nav.css');
+@import url('./kontroll-leiste.css');
+@import url('./dark-mode.css');
+@import url('./grid.css');

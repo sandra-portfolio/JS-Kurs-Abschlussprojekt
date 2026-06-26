@@ -1,0 +1,31 @@
+:root {
+    /* Farbpalette */
+    --bg-header: #1A2E40;       /* Das dunkle Nachtblau für die obere Bar */
+    --bg-main: #F7F4EF;         /* Das sanfte Leinen-Weiß für den Hintergrund */
+    --bg-card: #FFFFFF;         /* Reines Weiß für die Buchkarten */
+    --color-accent: #C87A65;    /* Das Terracotta für den "Buch hinzufügen"-Button */
+
+    /* Textfarben */
+    --text-main: #2A2F35;       /* Dunkles Anthrazit für Buchtitel */
+    --text-muted: #6B7280;      /* Weiches Grau für den Autor */
+    --stars-empty: #D1D5DB;     /* Helles Grau für die noch leeren Sterne */
+
+    /* Globale Schriften */
+    --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+}
+
+/* Wenn das body-Tag die Klasse .dark-theme hat, überschreiben wir die Variablen */
+body.dark-theme {
+    --bg-header: #0F172A;       /* Ein noch dunkleres Schiefer-Blau */
+    --bg-main: #1E293B;         /* Dunkles Grau-Blau für den Hintergrund */
+    --bg-card: #334155;         /* Etwas helleres Grau-Blau für die Karten */
+    --text-main: #F8FAFC;       /* Fast Weiß für die Titel */
+    --text-muted: #94A3B8;      /* Helles Graublau für Autoren */
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "buch_1",
+    "titel": "The Deal",
+    "autor": "Elle Kennedy",
+    "genre": "Liebesroman",
+    "status": "gelesen",
+    "bewertung": 4,
+    "cover": "./assets/img/the_deal.jpg"
+  },
+  {
+    "id": "buch_2",
+    "titel": "The Mistake",
+    "autor": "Elle Kennedy",
+    "genre": "Liebesroman",
+    "status": "gelesen",
+    "bewertung": 3,
+    "cover": "./assets/img/the_mistake.jpeg"
+  },
+  {
+    "id": "buch_3",
+    "titel": "The Score",
+    "autor": "Elle Kennedy",
+    "genre": "Liebesroman",
+    "status": "gelesen",
+    "bewertung": 5,
+    "cover": "./assets/img/the_score.jpeg"
+  },
+  {
+    "id": "buch_4",
+    "titel": "The Goal",
+    "autor": "Elle Kennedy",
+    "genre": "Liebesroman",
+    "status": "gelesen",
+    "bewertung": 3,
+    "cover": "./assets/img/the_goal.jpeg"
+  },
+  {
+    "id": "buch_5",
+    "titel": "The Legacy",
+    "autor": "Elle Kennedy",
+    "genre": "Liebesroman",
+    "status": "gelesen",
+    "bewertung": 4,
+    "cover": "./assets/img/the_legacy.jpeg"
+  },
+  {
+    "id": "buch_6",
+    "titel": "The Chase",
+    "autor": "Elle Kennedy",
+    "genre": "Liebesroman",
+    "status": "gelesen",
+    "bewertung": 4,
+    "cover": "./assets/img/the_chase.jpeg"
+  },
+  {
+    "id": "buch_7",
+    "titel": "The Risk",
+    "autor": "Elle Kennedy",
+    "genre": "Liebesroman",
+    "status": "gelesen",
+    "bewertung": 5,
+    "cover": "./assets/img/the_risk.jpeg"
+  },
+  {
+    "id": "buch_8",
+    "titel": "The Play",
+    "autor": "Elle Kennedy",
+    "genre": "Liebesroman",
+    "status": "gelesen",
+    "bewertung": 3,
+    "cover": "./assets/img/the_play.jpeg"
+  },
+  {
+    "id": "buch_9",
+    "titel": "The Dare",
+    "autor": "Elle Kennedy",
+    "genre": "Liebesroman",
+    "status": "gelesen",
+    "bewertung": 3,
+    "cover": "./assets/img/the_dare.jpeg"
+  },
+  {
+    "id": "buch_10",
+    "titel": "Firewatch",
+    "autor": "Colin Hadler",
+    "genre": "Thriller",
+    "status": "ungelesen",
+    "bewertung": 0,
+    "cover": "./assets/img/firewatch.webp"
+  }
+]

@@ -1,0 +1,85 @@
+.navbar {
+    background-color: var(--bg-header);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-inhalt {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.such-input {
+    width: 300px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+/* --- Dark Mode Schlater --- */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+/* Die versteckte, originale Checkbox */
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Der sichtbare Hintergrund des Schalters */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #4A5568;
+    transition: .3s;
+    border-radius: 24px;
+}
+
+/* Der kleine weiße Kreis im Schalter */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+/* Wenn die Checkbox aktiv (checked) ist -> Hintergrundfarbe ändern */
+.toggle-switch input:checked + .slider {
+    background-color: var(--color-accent);
+}
+
+/* Wenn aktiv -> Kreis nach rechts schieben */
+.toggle-switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
