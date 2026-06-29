@@ -5,7 +5,7 @@ const renderRegal= (buch) => {
     DOM.buecherGrid.innerHTML = "";
 
     // Wir nutzen hier (buch, index), damit wir die genaue Position im Array haben (0, 1, 2...)
-    buch.forEach((buch, index) => {
+    buch.forEach((buch) => {
         const karte = document.createElement('div');
         karte.className = 'buch-karte';
 

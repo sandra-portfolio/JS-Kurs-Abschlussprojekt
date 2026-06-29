@@ -18,7 +18,7 @@ function initialisiereEvents() {
     // 4. Dropdown Sortieren
     DOM.sortierSelect.addEventListener('change', sortierungAusfuehren);
 
-    // 5. Hört auf jede Eingabe in deinem Suchfeld
+    // 5. Hört auf jede Eingabe in dem Suchfeld
     DOM.suchInput.addEventListener('input', sucheAusfuehren);
 
     // 6. Klick auf Tag (für ○ Ungelesen und Löschen)
@@ -36,7 +36,7 @@ function initialisiereEvents() {
     // 10. Löschen einer Karte
     DOM.buecherGrid.addEventListener('click', buchLoeschenVerarbeiten);
 
-    // 11. Modal öffnen über DEINEN Button (.btn-add)
+    // 11. Modal öffnen über Button "Buch hinzufügen" (.btn-add)
     DOM.btnAdd.addEventListener('click', modalHinzufuegenOeffnenHandler);
 
     // 12. Modal schließen über das "X" im Hinzufügen-Modal

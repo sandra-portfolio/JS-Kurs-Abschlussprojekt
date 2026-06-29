@@ -9,14 +9,14 @@
 .dark-theme select,
 .dark-theme select option {
     background-color: var(--bg-card, #2A2A2A); /* Nutzt die dunkle Kartenfarbe */
-    color: var(--text-color, #FFFFFF);        /* Macht den Text strahlend weiß */
+    color: var(--text-main, #FFFFFF);        /* Macht den Text strahlend weiß */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Ein dezenter Rahmen, damit man es sieht */
 }
 
 /* Falls das Eingabefeld (Suche) das gleiche Problem hat, kannst du es hier direkt mitschützen: */
 .dark-theme input[type="text"] {
     background-color: var(--bg-card, #2A2A2A);
-    color: var(--text-color, #FFFFFF);
+    color: var(--text-main, #FFFFFF);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -101,6 +101,6 @@
 /* Fokus-Effekt für die Eingabe */
 .dark-theme .form-gruppe input[type="text"]:focus,
 .dark-theme .form-gruppe select:focus {
-    border-color: #f1c40f;
+    border-color: var(--color-accent);
     outline: none;
 }
