@@ -61,7 +61,7 @@
 			<select class="sortier-select">
 				<option value="titel">Sortieren: Titel (A-Z)</option>
 				<option value="autor">Sortieren: Autor (A-Z)</option>
-				<option value="bewertung">Sortieren: Beste Bewertung</option>
+				<option value="bewertung">Sortieren: beste Bewertung</option>
 			</select>
 
 			<button class="btn-add">Buch hinzufügen</button>
@@ -71,6 +71,7 @@
 
 	<main class="buecher-grid"></main>
 
+	<!-- Modal ungelesenes Buch bewerten -->
 	<div id="bewertung-modal" class="modal-overlay ausgeblendet">
 		<div class="modal-content">
 			<button class="modal-schliessen">✕</button>
@@ -87,10 +88,64 @@
 			</div>
 
 			<div class="modal-buttons">
-				<button class="btn-abbrechen">Abbrechen</button>
 				<button class="btn-speichern-bewertung">Bewertung speichern</button>
 			</div>
 		</div>
+	</div>
+
+	<!-- Modal neues Buch hinzufügen -->
+	<div id="modal-hinzufuegen" class="modal-overlay ausgeblendet"> <div class="modal-content">
+		<button id="modal-hinzufuegen-schliessen" class="modal-schliessen">✕</button>
+		<h2>Neues Buch eintragen</h2>
+
+		<form id="form-neues-buch">
+			<div class="form-gruppe">
+				<label for="input-titel">Buchtitel:</label>
+				<input type="text" id="input-titel" required placeholder="z.B. Der Herr der Ringe">
+			</div>
+
+			<div class="form-gruppe">
+				<label for="input-autor">Autor:</label>
+				<input type="text" id="input-autor" required placeholder="z.B. J.R.R. Tolkien">
+			</div>
+
+			<div class="form-gruppe">
+				<label for="input-genre">Genre:</label>
+				<select id="input-genre" required>
+					<option value="" disabled selected>Bitte Genre wählen...</option>
+					<option value="Liebesroman">Liebesroman</option>
+					<option value="Thriller">Thriller</option>
+					<option value="Manga">Manga</option>
+					<option value="Fantasy">Fantasy</option>
+				</select>
+			</div>
+
+			<div class="form-gruppe">
+				<label for="input-cover">Buchcover auswählen:</label>
+				<input type="file" id="input-cover" accept="image/*" required>
+			</div>
+
+			<div class="form-gruppe checkbox-gruppe">
+				<input type="checkbox" id="input-gelesen">
+				<label for="input-gelesen">Ich habe dieses Buch bereits gelesen</label>
+			</div>
+
+			<div id="hinzufuegen-sterne-bereich" class="ausgeblendet">
+				<p>Deine Bewertung:</p>
+				<div class="sterne-container" data-gewaehlte-sterne="0">
+					<span class="stern-hinzufuegen" data-wert="1">★</span>
+					<span class="stern-hinzufuegen" data-wert="2">★</span>
+					<span class="stern-hinzufuegen" data-wert="3">★</span>
+					<span class="stern-hinzufuegen" data-wert="4">★</span>
+					<span class="stern-hinzufuegen" data-wert="5">★</span>
+				</div>
+			</div>
+
+			<div class="modal-buttons">
+				<button type="submit" class="btn-speichern-bewertung">Buch ins Regal stellen</button>
+			</div>
+		</form>
+	</div>
 	</div>
 	</body>
 </html>

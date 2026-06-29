@@ -1,0 +1,163 @@
+/* ==========================================================================
+   CSS FÜR DAS BEWERTUNGS-MODAL (POP-UP)
+   ========================================================================== */
+
+/* 1. DIE WICHTIGSTE KLASSE: Versteckt das Modal standardmäßig */
+.ausgeblendet {
+    display: none !important;
+}
+
+/* 2. DAS OVERLAY: Das dunkle Netz, das sich über den GANZEN Bildschirm legt */
+.modal-overlay {
+    position: fixed;            /* Löst das Element komplett aus dem Grid-Textfluss */
+    top: 0;
+    left: 0;
+    width: 100vw;               /* Volle Bildschirmbreite */
+    height: 100vh;              /* Volle Bildschirmhöhe */
+    background-color: rgba(0, 0, 0, 0.6); /* Halbtransparenter, dunkler Hintergrund */
+
+    /* Zentriert die weiße Box perfekt in der Mitte des Bildschirms */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;              /* Höher als alles andere auf der Seite (schwebt über dem Grid) */
+}
+
+/* 3. DER INHALT: Die eigentliche weiße Box in der Mitte */
+.modal-content {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;         /* Nötig, um das Schließen-X oben rechts zu positionieren */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 4. DAS SCHLIESSEN-X (Oben rechts in der Ecke) */
+.modal-schliessen {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #999999;
+}
+
+/* 5. DIE STERNE */
+.modal-sterne {
+    margin: 20px 0;
+}
+
+.modal-stern {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #cccccc;             /* Standard: Grau */
+    transition: color 0.1s ease;
+}
+
+/* Wenn ein Stern aktiv ist (gelb) oder mit der Maus überfahren wird */
+.modal-stern.aktiv,
+.modal-stern:hover {
+    color: var(--color-accent);             /* Schönes Goldgelb */
+}
+
+/* 1. Sobald man über den STERNE-BEREICH hovert, machen wir erst mal ALLE Sterne gelb */
+.modal-sterne:hover .modal-stern {
+    color: var(--color-accent);
+}
+
+/* 2. UND JETZT DER TRICK: Alle Sterne, die NACH dem aktuell gehoverten Stern
+      im HTML kommen, färben wir wieder grau! */
+.modal-sterne .modal-stern:hover ~ .modal-stern {
+    color: #cccccc;
+}
+
+/* 6. DIE BUTTONS NEBENEINANDER */
+.modal-buttons {
+    margin-top: 25px;
+}
+
+.btn-speichern-bewertung {
+    width: 100%; /* Macht den Button schön groß und zieht ihn über die gesamte Breite */
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--bg-header) ;
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+/* Kleiner Hover-Effekt, damit der Button lebendiger wirkt */
+.btn-speichern-bewertung:hover {
+    background-color: #334155;
+}
+
+/* ==========================================================================
+   CSS FÜR DAS NEUE BUCH HINZUFÜGEN (POP-UP)
+   ========================================================================== */
+
+.form-gruppe {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-gruppe label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.form-gruppe input[type="text"],
+.form-gruppe input[type="file"],
+.form-gruppe select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+/* Spezial-Style für die Checkbox (damit sie nebeneinander stehen) */
+.checkbox-gruppe {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.checkbox-gruppe input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+#hinzufuegen-sterne-bereich {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.stern-hinzufuegen {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.1s ease;
+}
+
+.stern-hinzufuegen.aktiv {
+    color: var(--color-accent);
+}

@@ -29,9 +29,19 @@ const DOM = {
     modalSterne: document.querySelectorAll('.modal-stern'), // Holt alle 5 Sterne als NodeList
     modalSpeichernBtn: document.querySelector('.btn-speichern-bewertung'),
     modalAbbrechenBtn: document.querySelector('.btn-abbrechen'),
-    modalSchliessenX: document.querySelector('.modal-schliessen')
+    modalSchliessenX: document.querySelector('.modal-schliessen'),
+
+    // Die Elemente für das "Buch hinzufügen"-Modal
+    btnAdd: document.querySelector('.btn-add'),
+    modalHinzufuegen: document.querySelector('#modal-hinzufuegen'),
+    modalHinzufuegenSchliessen: document.querySelector('#modal-hinzufuegen-schliessen'),
+    inputGelesen: document.querySelector('#input-gelesen'),
+    hinzufuegenSterneBereich: document.querySelector('#hinzufuegen-sterne-bereich'),
+    hinzufuegenSterneContainer: document.querySelector('#hinzufuegen-sterne-bereich .sterne-container'),
+    formNeuesBuch: document.querySelector('#form-neues-buch')
 };
 
 // Unser globaler Datenspeicher für die Laufzeit
 let meinBuecherRegal = [];
-let addTemporaereSterne = 0;
+let temporaereHinzufuegenSterne = 0;
+let aktuellZuBewertendesBuchId = null;

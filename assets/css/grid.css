@@ -21,20 +21,74 @@
 
 .btn-loeschen {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #555555;
-    background: transparent;
+    top: 12px;
+    right: 12px;
+    background: none;
     border: none;
-    border-radius: 50%; /* Macht ihn rund */
-    width: 40px;
-    height: 40px;
+    color: #95a5a6; /* Unauffälliges Grau */
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 2px 6px;
+    transition: color 0.2s ease;
+}
+
+/* Der dunkle Schleier, der sich über die Karte legt */
+.loesch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Dunkelt die Karte perfekt ab */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Zentriert den Inhalt vertikal */
+    align-items: center;     /* Zentriert den Inhalt horizontal */
+    gap: 15px;
+    border-radius: inherit;  /* Übernimmt die Rundung deiner Karte */
+    opacity: 0;              /* Standardmäßig unsichtbar */
+    pointer-events: none;    /* Klicks gehen standardmäßig durch */
+    transition: opacity 0.2s ease;
+    z-index: 10;
+}
+
+/* Wird per JS aktiviert, wenn das X geklickt wird */
+.buch-karte.loeschen-aktiv .loesch-overlay {
+    opacity: 1;
+    pointer-events: auto;    /* Buttons werden klickbar */
+}
+
+/* Die Frage in der Mitte */
+.loesch-overlay p {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Die Buttons nebeneinander */
+.overlay-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-loeschen-ja {
+    background: var(--color-accent); /* Rot für Löschen */
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+}
+
+.btn-loeschen-nein {
+    background: #555; /* Dunkelgrau für Abbrechen, passend zum Schleier */
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .status-tag {
@@ -66,8 +120,8 @@
 }
 
 .buch-cover {
-    width: 120px;
-    height: auto;
+    width: auto;
+    height: 180px;
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 20px;

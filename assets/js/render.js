@@ -18,6 +18,14 @@ const renderRegal= (buch) => {
 
         // zur eindeutigen erkennung hängen wir überall die id aus der json an
         karte.innerHTML = `
+            <div class="loesch-overlay">
+                <p>Wirklich löschen?</p>
+                <div class="overlay-buttons">
+                    <button class="btn-loeschen-ja" data-id="${buch.id}">Ja</button>
+                    <button class="btn-loeschen-nein">Nein</button>
+                </div>
+            </div>
+
             <button class="btn-loeschen" data-id="${buch.id}">✕</button>
     
             <button class="status-tag ${statusKlasse} status-toggle-btn" data-id="${buch.id}">

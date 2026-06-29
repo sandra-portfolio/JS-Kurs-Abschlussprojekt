@@ -48,3 +48,59 @@
 .dark-theme .btn-loeschen {
     color: var(--text-main);
 }
+
+.dark-theme .modal-content {
+    background-color: var(--bg-main);
+    color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;         /* Nötig, um das Schließen-X oben rechts zu positionieren */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   DARK MODE STYLES FÜR DAS MODAL
+   ========================================== */
+
+/* Beschriftungen der Felder */
+.dark-theme .form-gruppe label {
+    color: #ffffff;
+}
+
+/* Eingabefelder und Dropdown */
+.dark-theme .form-gruppe input[type="text"],
+.dark-theme .form-gruppe input[type="file"],
+.dark-theme .form-gruppe select {
+    background-color: var(--bg-card);
+    border: 1px solid #555555;
+    color: #ffffff;
+}
+
+/* Platzhalter-Text */
+.dark-theme .form-gruppe input::placeholder {
+    color: #ffffff;
+}
+
+/* Der einklappbare Sternebereich */
+.dark-theme #hinzufuegen-sterne-bereich {
+    background-color: var(--bg-main);
+}
+
+/* Das Schließen-X */
+.dark-theme .modal-schliessen {
+    color: #cccccc;
+}
+
+.dark-theme .modal-schliessen:hover {
+    color: #ffffff;
+}
+
+/* Fokus-Effekt für die Eingabe */
+.dark-theme .form-gruppe input[type="text"]:focus,
+.dark-theme .form-gruppe select:focus {
+    border-color: #f1c40f;
+    outline: none;
+}

@@ -30,8 +30,25 @@ function initialisiereEvents() {
     // 8. Modal: Wenn "Speichern" geklickt wird > Bewertung sichern
     DOM.modalSpeichernBtn.addEventListener('click', modalSpeichernHandler);
 
-    // 9. Modal: Wenn "Abbrechen" geklickt wird > Modal schließenX
-    DOM.modalAbbrechenBtn.addEventListener('click', modalSchliessenHandler);
+    // 9. Modal: Wenn "x" geklickt wird > Modal schließen
     DOM.modalSchliessenX.addEventListener('click', modalSchliessenHandler);
+
+    // 10. Löschen einer Karte
+    DOM.buecherGrid.addEventListener('click', buchLoeschenVerarbeiten);
+
+    // 11. Modal öffnen über DEINEN Button (.btn-add)
+    DOM.btnAdd.addEventListener('click', modalHinzufuegenOeffnenHandler);
+
+    // 12. Modal schließen über das "X" im Hinzufügen-Modal
+    DOM.modalHinzufuegenSchliessen.addEventListener('click', modalHinzufuegenSchliessenHandler);
+
+    // 13. Auf die Änderung der "Gelesen"-Checkbox reagieren
+    DOM.inputGelesen.addEventListener('change', gelesenCheckboxAenderungHandler);
+
+    // 14. Klicks auf die Sterne innerhalb des Sterne-Containers abfangen
+    DOM.hinzufuegenSterneContainer.addEventListener('click', sternHinzufuegenKlickHandler);
+
+    // 15. Das Abschicken des Formulars abfangen
+    DOM.formNeuesBuch.addEventListener('submit', neuesBuchHinzufuegenHandler);
 
 }
