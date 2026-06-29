@@ -2,7 +2,7 @@
 
 Hier ist mein selbstgebautes digitales Bücherregal! Mit dieser Web-App kann ich meine persönliche Buchsammlung verwalten, den Überblick behalten und gelesene Bücher direkt bewerten.
 
-![Vorschau vom Bücherregal](./Screenshots README/Screenshot_Projekt.png)
+<img src="./Screenshots README/Screenshot_Projekt.png" width="100%" style="display: block; margin: 20px 0; clear: both;"/>
 
 ## Was kann das Bücherregal?
 
