@@ -9,19 +9,16 @@
 
 /* 2. DAS OVERLAY: Das dunkle Netz, das sich über den GANZEN Bildschirm legt */
 .modal-overlay {
-    position: fixed;            /* Löst das Element komplett aus dem Grid-Textfluss */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;               /* Volle Bildschirmbreite */
-    height: 100vh;              /* Volle Bildschirmhöhe */
-    background-color: rgba(0, 0, 0, 0.6); /* Halbtransparenter, dunkler Hintergrund */
-
-    /* Zentriert die weiße Box perfekt in der Mitte des Bildschirms */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
-
-    z-index: 9999;              /* Höher als alles andere auf der Seite (schwebt über dem Grid) */
+    z-index: 9999;
 }
 
 /* 3. DER INHALT: Die eigentliche weiße Box in der Mitte */
@@ -33,7 +30,7 @@
     width: 90%;
     max-width: 400px;
     text-align: center;
-    position: relative;         /* Nötig, um das Schließen-X oben rechts zu positionieren */
+    position: relative;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -57,34 +54,30 @@
 .modal-stern {
     font-size: 2.5rem;
     cursor: pointer;
-    color: #cccccc;             /* Standard: Grau */
+    color: #cccccc;
     transition: color 0.1s ease;
 }
 
-/* Wenn ein Stern aktiv ist (gelb) oder mit der Maus überfahren wird */
 .modal-stern.aktiv,
 .modal-stern:hover {
-    color: var(--color-accent);             /* Schönes Goldgelb */
+    color: var(--color-accent);
 }
 
-/* 1. Sobald man über den STERNE-BEREICH hovert, machen wir erst mal ALLE Sterne gelb */
 .modal-sterne:hover .modal-stern {
     color: var(--color-accent);
 }
 
-/* 2. UND JETZT DER TRICK: Alle Sterne, die NACH dem aktuell gehoverten Stern
-      im HTML kommen, färben wir wieder grau! */
 .modal-sterne .modal-stern:hover ~ .modal-stern {
     color: #cccccc;
 }
 
-/* 6. DIE BUTTONS NEBENEINANDER */
+
 .modal-buttons {
     margin-top: 25px;
 }
 
 .btn-speichern-bewertung {
-    width: 100%; /* Macht den Button schön groß und zieht ihn über die gesamte Breite */
+    width: 100%;
     padding: 12px 15px;
     border-radius: 6px;
     border: none;
@@ -96,7 +89,6 @@
     transition: background-color 0.2s ease;
 }
 
-/* Kleiner Hover-Effekt, damit der Button lebendiger wirkt */
 .btn-speichern-bewertung:hover {
     background-color: #334155;
 }
@@ -129,7 +121,6 @@
     background-color: white;
 }
 
-/* Spezial-Style für die Checkbox (damit sie nebeneinander stehen) */
 .checkbox-gruppe {
     flex-direction: row;
     align-items: center;

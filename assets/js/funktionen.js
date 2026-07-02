@@ -9,7 +9,7 @@ const aktiveFilter = {
 };
 
 // ==========================================
-// CORE-LOGIK: FILTERUNG
+// LOGIK: FILTERUNG
 // ==========================================
 
 const wendeFilterAn = () => {
@@ -25,19 +25,8 @@ const wendeFilterAn = () => {
         gefilterteBuecher = gefilterteBuecher.filter(b => b.genre === aktiveFilter.genre);
     }
 
-    // 3. Suchleiste Suche nach Titel oder Autor
-    if (aktiveFilter.suchbegriff !== '') {
-        gefilterteBuecher = gefilterteBuecher.filter(b => {
-            // Wir wandeln auch die Daten aus der JSON in Kleinbuchstaben um, um sie fair zu vergleichen
-            const titelPasst = b.titel.toLowerCase().includes(aktiveFilter.suchbegriff);
-            const autorPasst = b.autor.toLowerCase().includes(aktiveFilter.suchbegriff);
 
-            // Wenn der Text im Titel ODER im Autor vorkommt, bleibt das Buch drin
-            return titelPasst || autorPasst;
-        });
-    }
-
-    // 4. Sortierung nach Autor, Titel oder Bewertung
+    // 3. Sortierung nach Autor, Titel oder Bewertung
     let sortierteBuecher = [...gefilterteBuecher];
 
     if (aktiveFilter.sortierung === 'titel') {
@@ -55,16 +44,27 @@ const wendeFilterAn = () => {
         });
     }
 
+    // 4. Suchleiste Suche nach Titel oder Autor
+    if (aktiveFilter.suchbegriff !== '') {
+        gefilterteBuecher = gefilterteBuecher.filter(b => {
+            // Umwandlung in Kleinbuchstaben
+            const titelPasst = b.titel.toLowerCase().includes(aktiveFilter.suchbegriff);
+            const autorPasst = b.autor.toLowerCase().includes(aktiveFilter.suchbegriff);
+
+            // Wenn der Text im Titel ODER im Autor vorkommt, bleibt das Buch drin
+            return titelPasst || autorPasst;
+        });
+    }
+
     renderRegal(sortierteBuecher);
 }
-
 
 
 // ==========================================
 // HILFSFUNKTIONEN
 // ==========================================
 
-// Deine bestehende Funktion für die Sterne auf den Buchkarten (Bleibt genau so!)
+// Funktion für die Sterne auf den Buchkarten
 const generiereSterneHtml = (bewertung) => {
     let sterneHtml = "";
     for (let i = 1; i <= 5; i++) {
@@ -77,7 +77,16 @@ const generiereSterneHtml = (bewertung) => {
     return sterneHtml;
 }
 
-//Saubere Darstellung beim Neuladen sortiert immer nach Titel und im Dropdown ist das richtige ausgewählt
+//  Färbt die Sterne im Modal gelb
+const sterneImModalFaerben = (bewertung, sterneListe) => {
+    sterneListe.forEach(stern => {
+        const sternWert = Number(stern.getAttribute('data-wert'));
+        stern.classList.toggle('aktiv', sternWert <= bewertung);
+    });
+};
+
+
+// Saubere Darstellung beim Neuladen, sortiert immer nach Titel und im Dropdown ist das richtige ausgewählt
 const initDefault = () => {
     const istDark = localStorage.getItem('darkmodeAktiv') === 'true';
 
@@ -94,16 +103,20 @@ const initDefault = () => {
     wendeFilterAn();
 };
 
-// Hilfsfunktion: Färbt die Sterne im Modal gelb
-const sterneImModalFaerben = (bewertung, sterneListe) => {
-    sterneListe.forEach(stern => {
-        const sternWert = Number(stern.getAttribute('data-wert'));
-        stern.classList.toggle('aktiv', sternWert <= bewertung);
-    });
-};
-
-// Hilfsfunktion: Speichert in LocalStorage und triggert die Filterkette
+// Speichert in LocalStorage und triggert die Filterkette
 const datenSpeichernUndAktualisieren = () => {
     localStorage.setItem('gespeicherteBuecher', JSON.stringify(meinBuecherRegal));
     wendeFilterAn();
+};
+
+// Hilfsfunktion zum sauberen Schließen und Resetten des Modals
+const modalHinzufuegenSchliessenAnpassung = () => {
+    DOM.modalHinzufuegen.classList.add('ausgeblendet');
+    DOM.formNeuesBuch.reset();
+    DOM.aktuellEditiertesBuchId = null; // Wichtig! ID wieder löschen
+    document.querySelector('#modal-hinzufuegen h2').textContent = "Neues Buch eintragen";
+    document.querySelector('#modal-hinzufuegen .btn-speichern-bewertung').textContent = "Buch ins Regal stellen";
+    document.querySelector('#input-cover').required = true;
+    document.querySelector('#hinzufuegen-sterne-bereich').classList.add('ausgeblendet');
+    temporaereHinzufuegenSterne = 0;
 };

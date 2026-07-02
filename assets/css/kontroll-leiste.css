@@ -57,18 +57,15 @@
     display: flex;
     gap: 15px;
     padding: 0;
-    /* Macht das Aufgleiten flüssig */
     transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
 
-/* Diese Klasse steuern wir gleich mit JavaScript an */
 .genre-filter-container.offen {
-    max-height: 40px; /* Genug Platz für eine Zeile Text */
+    max-height: 40px;
     opacity: 1;
-    padding: 8px 0 4px 0; /* Gibt den Genres etwas Luft zum Atmen */
+    padding: 8px 0 4px 0;
 }
 
-/* Die Genres als ultra-cleaner Text ohne Rahmen */
 .genre-filter-container .chip {
     background: none;
     border: none;
@@ -116,5 +113,5 @@
 }
 
 .btn-add:hover {
-    background-color: #B26551; /* Etwas dunkleres Terracotta beim Hovern */
+    background-color: #B26551;
 }

@@ -1,40 +1,40 @@
-/* Wenn der body die Klasse .dark-theme hat, passen wir das ungelesen-Tag an */
+/* Ungelesen Tag */
 .dark-theme .tag-ungelesen {
-    background-color: #1F3A60; /* Ein tieferes, kontrastreiches Blau für den Hintergrund */
-    color: #90CAF9;            /* Ein sehr helles, gut lesbares Blau für den Text */
-    border: 1px solid rgba(144, 202, 249, 0.3); /* Optional: Ein feiner Leuchteffekt */
+    background-color: #1F3A60;
+    color: #90CAF9;
+    border: 1px solid rgba(144, 202, 249, 0.3);
 }
 
-/* Wenn der body die Klasse .dark-theme hat, stylen wir das Dropdown um */
+/* Dropdown */
 .dark-theme select,
 .dark-theme select option {
-    background-color: var(--bg-card, #2A2A2A); /* Nutzt die dunkle Kartenfarbe */
-    color: var(--text-main, #FFFFFF);        /* Macht den Text strahlend weiß */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Ein dezenter Rahmen, damit man es sieht */
+    background-color: var(--bg-card, #2A2A2A);
+    color: var(--text-main, #FFFFFF);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Falls das Eingabefeld (Suche) das gleiche Problem hat, kannst du es hier direkt mitschützen: */
+/* Suchfeld */
 .dark-theme input[type="text"] {
     background-color: var(--bg-card, #2A2A2A);
     color: var(--text-main, #FFFFFF);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Wenn der body die Klasse .dark-theme hat, passen wir das Modal an */
+/* Modal */
 .dark-theme .modal-inhalt {
-    background-color: #2A2A2A; /* Ein schönes, dunkles Anthrazit für den Hintergrund */
-    color: #FFFFFF;            /* Strahlend weiße Schrift */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Ein dunklerer, kräftigerer Schatten */
+    background-color: #2A2A2A;
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
-/* Die Buttons im Modal für den Dark Mode optimieren */
+/* Buttons im Modal */
 .dark-theme .btn-sekundaer {
-    background-color: #444444; /* Dunklerer Button für "Abbrechen" */
-    color: #E0E0E0;            /* Helle Schrift dazu */
+    background-color: #444444;
+    color: #E0E0E0;
 }
 
 .dark-theme .btn-primaer {
-    background-color: #357AE8; /* Ein etwas kräftigeres Blau, das auf dunklem Grund besser knallt */
+    background-color: #357AE8;
     color: #FFFFFF;
 }
 
@@ -45,7 +45,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.dark-theme .btn-loeschen {
+.dark-theme .btn-loeschen, .dark-theme .btn-edit {
     color: var(--text-main);
 }
 
@@ -57,7 +57,7 @@
     width: 90%;
     max-width: 400px;
     text-align: center;
-    position: relative;         /* Nötig, um das Schließen-X oben rechts zu positionieren */
+    position: relative;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 

@@ -11,7 +11,7 @@ const DOM = {
     // Filter Alle/Ungelesen/Gelesen
     statusButtons: document.querySelectorAll('.filter-links .filter-btn:not(.toggle-btn)'),
 
-    // Sortierung Genre
+    // Filter Genre
     genreChips: document.querySelectorAll('.genre-filter-container .chip'),
     genresToggleBtn: document.querySelector('#genres-toggle-btn'),
     genreContainer: document.querySelector('#genre-container'),
@@ -19,7 +19,7 @@ const DOM = {
     // Dropdown Sortierung
     sortierSelect: document.querySelector('.sortier-select'),
 
-    // Sucheleiste
+    // Suchleiste
     suchInput: document.querySelector('.such-input'),
 
     // Die Elemente für das Bewertungs-Pop-up (Modal)
@@ -38,10 +38,11 @@ const DOM = {
     inputGelesen: document.querySelector('#input-gelesen'),
     hinzufuegenSterneBereich: document.querySelector('#hinzufuegen-sterne-bereich'),
     hinzufuegenSterneContainer: document.querySelector('#hinzufuegen-sterne-bereich .sterne-container'),
-    formNeuesBuch: document.querySelector('#form-neues-buch')
+    formNeuesBuch: document.querySelector('#form-neues-buch'),
+    aktuellEditiertesBuchId: null
 };
 
-// Unser globaler Datenspeicher für die Laufzeit
+// Globaler Datenspeicher für die Laufzeit
 let meinBuecherRegal = [];
 let temporaereHinzufuegenSterne = 0;
 let aktuellZuBewertendesBuchId = null;

@@ -44,14 +44,12 @@
     height: 24px;
 }
 
-/* Die versteckte, originale Checkbox */
 .toggle-switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-/* Der sichtbare Hintergrund des Schalters */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -61,7 +59,6 @@
     border-radius: 24px;
 }
 
-/* Der kleine weiße Kreis im Schalter */
 .slider:before {
     position: absolute;
     content: "";
@@ -74,12 +71,10 @@
     border-radius: 50%;
 }
 
-/* Wenn die Checkbox aktiv (checked) ist -> Hintergrundfarbe ändern */
 .toggle-switch input:checked + .slider {
     background-color: var(--color-accent);
 }
 
-/* Wenn aktiv -> Kreis nach rechts schieben */
 .toggle-switch input:checked + .slider:before {
     transform: translateX(20px);
 }

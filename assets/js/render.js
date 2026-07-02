@@ -4,7 +4,6 @@ const renderRegal= (buch) => {
     console.log("RENDER: Zeichne das Grid neu...");
     DOM.buecherGrid.innerHTML = "";
 
-    // Wir nutzen hier (buch, index), damit wir die genaue Position im Array haben (0, 1, 2...)
     buch.forEach((buch) => {
         const karte = document.createElement('div');
         karte.className = 'buch-karte';
@@ -16,7 +15,7 @@ const renderRegal= (buch) => {
         // Sterne holen oder leere Sterne anzeigen
         const sterneHtml = buch.status === 'gelesen' ? generiereSterneHtml(buch.bewertung) : generiereSterneHtml(0);
 
-        // zur eindeutigen erkennung hängen wir überall die id aus der json an
+        // zur eindeutigen erkennung id aus json
         karte.innerHTML = `
             <div class="loesch-overlay">
                 <p>Wirklich löschen?</p>
@@ -27,6 +26,7 @@ const renderRegal= (buch) => {
             </div>
 
             <button class="btn-loeschen" data-id="${buch.id}">✕</button>
+            <button class="btn-edit" data-id="${buch.id}">✎</button>
     
             <button class="status-tag ${statusKlasse} status-toggle-btn" data-id="${buch.id}">
                 ${statusText}
@@ -38,7 +38,7 @@ const renderRegal= (buch) => {
                 <p class="autor">${buch.autor}</p>
                 <p class="genre">${buch.genre}</p>
     
-            <div class="sterne sterne-click-bereich" data-id="$${buch.id}">
+            <div class="sterne sterne-click-bereich" data-id="${buch.id}">
                 ${sterneHtml}
             </div>
             `;

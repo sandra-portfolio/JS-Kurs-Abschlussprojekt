@@ -3,6 +3,7 @@
 /**
  * DIE INITIALISIERUNGS-FUNKTION (Der alleinige Startknopf)
  */
+
 const init = () => {
     console.log("SCRIPT: Anwendung startet...");
     ladeUndZeigeBuecher();

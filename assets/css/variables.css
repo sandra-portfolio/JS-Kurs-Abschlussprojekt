@@ -21,7 +21,7 @@ body {
     padding: 0;
 }
 
-/* Wenn das body-Tag die Klasse .dark-theme hat, überschreiben wir die Variablen */
+/* Wenn das body-Tag die Klasse .dark-theme hat */
 body.dark-theme {
     --bg-header: #0F172A;       /* Ein noch dunkleres Schiefer-Blau */
     --bg-main: #1E293B;         /* Dunkles Grau-Blau für den Hintergrund */
