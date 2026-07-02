@@ -11,7 +11,9 @@ Hier ist mein selbstgebautes digitales Bücherregal! Mit dieser Web-App kann ich
 - **Filter- & Suchfunktion:** Ich kann nach bestimmten Titeln oder Autoren suchen, nach Genres filtern (z.B. Krimi oder Fantasy) oder mir nur gelesene/ungelesene Bücher anzeigen lassen.
 - **Sortieren:** Das Regal sortiert sich auf Wunsch automatisch nach dem Alphabet (Titel/Autor) oder zeigt die am besten bewerteten Bücher ganz oben an.
 - **Sterne vergeben:** Wenn ich ein Buch fertig gelesen habe, kann ich ihm direkt 1 bis 5 Sterne geben.
+<p></p>
 <img src="./Screenshots README/Screenshot_Buch_bewerten.png" width="300" style="display: block; margin: 20px 0; clear: both;"/>
+<p></p>
 - **Dunkler Modus (Dark Mode):** Die App hat ein eigenes Design für den Dark Mode – inklusive perfekt angepasster, weißer Eingabefelder im Formular für besten Kontrast.
 - **Automatisches Speichern:** Alle Bücher werden sicher im Browser gespeichert (`localStorage`). Selbst wenn ich die Seite neu lade, geht nichts verloren!
 
