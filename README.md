@@ -29,5 +29,5 @@ Mir war wichtig, dass der Code nicht in einer einzigen, riesigen Datei landet. D
 ## Verwendete Techniken
 
 Das komplette Projekt wurde mit den Standard-Webtechniken gebaut – ohne komplizierte Zusatzprogramme:
-- **HTML5 & CSS3** (inklusive responsivem Design für das Modal)
-- **Vanilla JavaScript** (Modernes JS, strikt aufgeteilt in Module)
+- **HTML5 & CSS3**
+- **Vanilla JavaScript**
