@@ -25,8 +25,19 @@ const wendeFilterAn = () => {
         gefilterteBuecher = gefilterteBuecher.filter(b => b.genre === aktiveFilter.genre);
     }
 
+    // 3. Suchleiste Suche nach Titel oder Autor
+    if (aktiveFilter.suchbegriff !== '') {
+        gefilterteBuecher = gefilterteBuecher.filter(b => {
+            // Umwandlung in Kleinbuchstaben
+            const titelPasst = b.titel.toLowerCase().includes(aktiveFilter.suchbegriff);
+            const autorPasst = b.autor.toLowerCase().includes(aktiveFilter.suchbegriff);
 
-    // 3. Sortierung nach Autor, Titel oder Bewertung
+            // Wenn der Text im Titel ODER im Autor vorkommt, bleibt das Buch drin
+            return titelPasst || autorPasst;
+        });
+    }
+
+    // 4. Sortierung nach Autor, Titel oder Bewertung
     let sortierteBuecher = [...gefilterteBuecher];
 
     if (aktiveFilter.sortierung === 'titel') {
@@ -44,17 +55,6 @@ const wendeFilterAn = () => {
         });
     }
 
-    // 4. Suchleiste Suche nach Titel oder Autor
-    if (aktiveFilter.suchbegriff !== '') {
-        gefilterteBuecher = gefilterteBuecher.filter(b => {
-            // Umwandlung in Kleinbuchstaben
-            const titelPasst = b.titel.toLowerCase().includes(aktiveFilter.suchbegriff);
-            const autorPasst = b.autor.toLowerCase().includes(aktiveFilter.suchbegriff);
-
-            // Wenn der Text im Titel ODER im Autor vorkommt, bleibt das Buch drin
-            return titelPasst || autorPasst;
-        });
-    }
 
     renderRegal(sortierteBuecher);
 }
